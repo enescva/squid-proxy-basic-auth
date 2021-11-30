@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 RUN apt-get -qqy update
 RUN apt-get -qqy upgrade
-RUN apt-get -qqy install apache2-utils squid3
+RUN DEBIAN_FRONTEND=noninteractive apt-get -qqy install apache2-utils squid3
 
 COPY squid.conf /etc/squid/squid.conf
 COPY entrypoint.sh /
